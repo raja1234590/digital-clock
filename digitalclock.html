@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+    <style>
+        body{
+            padding:0;
+            margin:0;
+        }
+        .container{
+            width:400px;
+            height:250px;
+            background-color: skyblue;
+            position: relative;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            padding:20px;
+            border:10px solid black;
+        }
+        .clock{
+            height:200px;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .clock span{
+            font-size:85px;
+            padding:6px;
+        }
+        h2{
+           text-align: center; 
+           padding-bottom:0;
+           margin-bottom: 0;
+           font-size:32px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Digital clock</h2>
+        <div class="clock">
+         <span id="hrs">00</span>
+         <span>:</span>
+         <span id="min">00</span>
+         <span>:</span>
+         <span id="sec">00</span>
+
+        </div>
+
+
+    </div>
+    <script>
+        let hrs=document.getElementById('hrs');
+        let min=document.getElementById('min');
+        let sec=document.getElementById('sec');
+        
+        setInterval(function(){
+            let presentTime=new Date();
+            hrs.innerText=presentTime.getHours();
+            min.innerText=presentTime.getMinutes();
+            sec.innerText=presentTime.getSeconds();
+
+        },1000);
+    </script>
+</body>
+</html>
